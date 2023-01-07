@@ -1,0 +1,11 @@
+:host {
+	display: grid;
+	grid-template-columns: 70% 30%;
+	max-width: 1366px;
+	margin: auto;
+}
+@media only screen and (max-width: 800px) {
+	:host {
+		grid-template-columns: auto;
+	}
+}

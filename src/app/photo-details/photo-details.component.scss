@@ -1,0 +1,10 @@
+:host {
+	display: grid;
+	grid-template-rows: 634px auto;
+}
+
+@media only screen and (max-width: 800px) {
+	:host {
+		grid-template-rows: 50vh auto;
+	}
+}
