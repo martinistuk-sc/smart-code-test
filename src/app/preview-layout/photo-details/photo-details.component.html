@@ -1,3 +1,29 @@
-<app-photo-preview></app-photo-preview>
+<div class="container" *ngIf="photoDetails$ | async as details">
+	<div
+		class="photoPreview"
+		[style.backgroundImage]=" 'url(https://api.pixsell.hr' + details.preview.preview_url + ')' "
+	></div>
 
-<app-photo-info></app-photo-info>
+	<div class="photoInfo">
+		<div class="info-container">
+			<h3>GALERIJA</h3>
+			<p>{{ details.headline[0].content }}</p>
+
+			<h3>AUTOR</h3>
+			<p>{{ details.author.name }}</p>
+
+			<h3>AGENCIJA</h3>
+			<p>{{ details.agency.name }}</p>
+		</div>
+
+		<h3>OPIS</h3>
+		<p>{{ details.caption[0].content }}</p>
+
+		<h3>KLJUČNE RIJEČI</h3>
+		<div>
+			<button *ngFor="let item of details.keywords_list">
+				{{ item.name[0].content }}
+			</button>
+		</div>
+	</div>
+</div>
