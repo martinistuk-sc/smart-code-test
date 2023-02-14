@@ -1,13 +1,14 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { PreviewLayoutComponent } from "./preview-layout.component";
-import { BasketModule } from "./basket/basket.module";
+import { PreviewPhotoComponent } from "./preview-photo.component";
+
 import { PhotoDetailsModule } from "./photo-details/photo-details.module";
+import { BasketModule } from "./basket/basket.module";
 
 @NgModule({
-	declarations: [PreviewLayoutComponent],
+	declarations: [PreviewPhotoComponent],
 	imports: [CommonModule, PhotoDetailsModule, BasketModule],
-	exports: [PreviewLayoutComponent],
+	exports: [PreviewPhotoComponent],
 })
-export class PreviewLayoutModule {}
+export class PreviewPhotoModule {}

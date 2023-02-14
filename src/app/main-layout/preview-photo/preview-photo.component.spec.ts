@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PreviewLayoutComponent } from './preview-layout.component';
+import { PreviewPhotoComponent } from './preview-photo.component';
 
-describe('PreviewLayoutComponent', () => {
-  let component: PreviewLayoutComponent;
-  let fixture: ComponentFixture<PreviewLayoutComponent>;
+describe('PreviewPhotoComponent', () => {
+  let component: PreviewPhotoComponent;
+  let fixture: ComponentFixture<PreviewPhotoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PreviewLayoutComponent ]
+      declarations: [ PreviewPhotoComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PreviewLayoutComponent);
+    fixture = TestBed.createComponent(PreviewPhotoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

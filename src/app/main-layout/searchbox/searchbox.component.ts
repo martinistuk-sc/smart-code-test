@@ -3,8 +3,8 @@ import { FormBuilder, Validators } from "@angular/forms";
 
 import { Subscription } from "rxjs";
 
-import { Content } from "../interfaces/content.interface";
-import { PhotoService } from "../services/photo/photo.service";
+import { Content } from "../../interfaces/content.interface";
+import { PhotoService } from "../../services/photo/photo.service";
 
 @Component({
 	selector: "app-searchbox",

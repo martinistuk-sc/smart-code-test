@@ -3,9 +3,10 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 
-import { AppRoutingModule } from "./app.routing.module";
-import { SearchboxModule } from "./searchbox/searchbox.module";
-import { PreviewLayoutModule } from "./preview-layout/preview-layout.module";
+import { AppRoutingModule } from "./app.routing";
+import { AuthLayoutModule } from "./auth-layout/auth-layout.module";
+import { SearchboxModule } from "./main-layout/searchbox/searchbox.module";
+import { MainLayoutModule } from "./main-layout/main-layout.module";
 
 @NgModule({
 	declarations: [AppComponent],
@@ -15,8 +16,9 @@ import { PreviewLayoutModule } from "./preview-layout/preview-layout.module";
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
+		AuthLayoutModule,
 		SearchboxModule,
-		PreviewLayoutModule,
+		MainLayoutModule,
 	],
 })
 export class AppModule {}
