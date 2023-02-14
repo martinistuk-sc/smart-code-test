@@ -1,0 +1,11 @@
+:host {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	background: #f4f5f7 url("../../../../assets/cl.jpg") center/448px 527px no-repeat;
+}
+@media only screen and (max-width: 800px) {
+	:host {
+		background: #f4f5f7 url("../../../../assets/cl.jpg") center/cover no-repeat;
+	}
+}

@@ -1,0 +1,25 @@
+ul {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 1rem;
+	li {
+		border: 1px solid black;
+		a {
+			text-decoration: none;
+			color: black;
+			div {
+				display: grid;
+				grid-template-columns: 100px auto;
+				align-items: center;
+				img {
+					width: 100px;
+					height: 100px;
+				}
+				p {
+					padding: 0 1rem;
+				}
+			}
+		}
+	}
+}

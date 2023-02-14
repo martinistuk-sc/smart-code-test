@@ -1,0 +1,15 @@
+<form [formGroup]="searchForm">
+	<input type="text" formControlName="name" />
+	<button type="button" (click)="onSubmit()">Pretraži</button>
+</form>
+
+<ul *ngIf="itemList">
+	<li *ngFor="let item of itemList">
+		<a href="#">
+			<div>
+				<img [src]=" 'https://api.pixsell.hr' + item.preview[0].preview_url ">
+				<p>{{ (item.title[0].content | slice : 0 : 50) + "..." }}</p>
+			</div>
+		</a>
+	</li>
+</ul>
