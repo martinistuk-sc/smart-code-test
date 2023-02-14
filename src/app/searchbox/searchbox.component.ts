@@ -18,7 +18,7 @@ export class SearchboxComponent implements OnDestroy {
 	) {}
 
 	public searchForm = this.fb.group(
-		{ name: ["Kolinda", [Validators.required]] },
+		{ name: ["", [Validators.required]] },
 		{ updateOn: "change" }
 	);
 

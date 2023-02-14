@@ -1,5 +1,5 @@
 <form [formGroup]="searchForm">
-	<input type="text" formControlName="name" />
+	<input type="text" formControlName="name" (keydown.enter)="onSubmit()">
 	<button type="button" (click)="onSubmit()">Pretraži</button>
 </form>
 
