@@ -9,7 +9,7 @@ import { Response } from "src/app/interfaces/response.interface";
 @Injectable({
 	providedIn: "root",
 })
-export class PhotoSearchService {
+export class PhotoService {
 	constructor(private http: HttpClient) {}
 
 	public getPhotos(searchTerm: string): Observable<Array<Content>> {
@@ -18,5 +18,11 @@ export class PhotoSearchService {
 		return this.http
 			.get<Response>(fullPath)
 			.pipe(map((response) => response.content));
+	}
+
+	public getPhotoDetails(id: string): Observable<Content> {
+		const fullPath: string =
+			"https://api.pixsell.hr/products/" + id + "?source=PIXSELL";
+		return this.http.get<Content>(fullPath);
 	}
 }

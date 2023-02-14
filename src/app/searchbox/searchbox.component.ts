@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from "@angular/forms";
 import { Subscription } from "rxjs";
 
 import { Content } from "../interfaces/content.interface";
-import { PhotoSearchService } from "../services/photo-search/photo-search.service";
+import { PhotoService } from "../services/photo/photo.service";
 
 @Component({
 	selector: "app-searchbox",
@@ -14,7 +14,7 @@ import { PhotoSearchService } from "../services/photo-search/photo-search.servic
 export class SearchboxComponent implements OnDestroy {
 	constructor(
 		private fb: FormBuilder,
-		private photoSearchService: PhotoSearchService
+		private photoService: PhotoService
 	) {}
 
 	public searchForm = this.fb.group(
@@ -26,7 +26,7 @@ export class SearchboxComponent implements OnDestroy {
 
 	public onSubmit(): void {
 		this.itemList = [];
-		this.photoSearchService.getPhotos(
+		this.photoService.getPhotos(
 			this.searchForm.controls.name.value as string
 		).subscribe({
 			next: (respArray: Array<Content>) => {

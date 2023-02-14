@@ -5,7 +5,7 @@
 
 <ul *ngIf="itemList">
 	<li *ngFor="let item of itemList">
-		<a href="#">
+		<a [routerLink]="['/preview/', item.id]">
 			<div>
 				<img [src]=" 'https://api.pixsell.hr' + item.preview[0].preview_url ">
 				<p>{{ (item.title[0].content | slice : 0 : 50) + "..." }}</p>

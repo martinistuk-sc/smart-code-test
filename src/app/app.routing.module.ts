@@ -5,7 +5,7 @@ import { SearchboxComponent } from "./searchbox/searchbox.component";
 
 const routes: Routes = [
 	{ path: "", component: SearchboxComponent, pathMatch: "full" },
-	{ path: "preview", component: PreviewLayoutComponent},
+	{ path: "preview/:id", component: PreviewLayoutComponent},
 	{ path: "**", redirectTo: "" },
 ];
 
