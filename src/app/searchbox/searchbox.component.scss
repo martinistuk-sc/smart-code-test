@@ -5,7 +5,22 @@
 	justify-items: center;
 
 	form {
-		margin-top: 1rem;
+		margin-top: 2rem;
+		input, button {
+			border-radius: 9999px 0 0 9999px;
+			border: 1px solid black;
+			outline: none;
+			padding: 8px 16px;
+			font-size: 16px;
+		}
+		button {
+			border-radius: 0 9999px 9999px 0;
+			border-left: none;
+			font-weight: bold;
+			cursor: pointer;
+			background-color: hsl(220, 100%, 40%);
+			color: white;
+		}
 	}
 
 	ul {
