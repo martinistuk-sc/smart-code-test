@@ -3,8 +3,8 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 
 import { Observable, map, switchMap, EMPTY } from "rxjs";
 
-import { Content } from "src/app/interfaces/content.interface";
 import { PhotoService } from "src/app/services/photo/photo.service";
+import { PhotoDetails } from "src/app/interfaces/photo-details.interface";
 
 @Component({
 	selector: "app-photo-info",
@@ -13,7 +13,7 @@ import { PhotoService } from "src/app/services/photo/photo.service";
 })
 export class PhotoInfoComponent {
 	private routeId$: Observable<string | null>;
-	public photoDetails$: Observable<Content>;
+	public photoDetails$: Observable<PhotoDetails>;
 
 	constructor(private route: ActivatedRoute, private photoService: PhotoService) {
 		this.routeId$ = this.route.paramMap.pipe(
@@ -39,4 +39,5 @@ export class PhotoInfoComponent {
 		"Fussball",
 		"Soccer",
 	];
+
 }

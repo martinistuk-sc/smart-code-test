@@ -26,7 +26,7 @@ export class SearchboxComponent implements OnDestroy {
 
 	public onSubmit(): void {
 		this.itemList = [];
-		this.photoService.getPhotos(
+		this.photoService.getSearchResults(
 			this.searchForm.controls.name.value as string
 		).subscribe({
 			next: (respArray: Array<Content>) => {

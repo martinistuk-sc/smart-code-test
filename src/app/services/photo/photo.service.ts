@@ -4,7 +4,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, map } from "rxjs";
 
 import { Content } from "src/app/interfaces/content.interface";
-import { Response } from "src/app/interfaces/response.interface";
+import { SearchResponse } from "src/app/interfaces/search-response.interface";
+import { PhotoDetails } from "src/app/interfaces/photo-details.interface";
 
 @Injectable({
 	providedIn: "root",
@@ -12,17 +13,17 @@ import { Response } from "src/app/interfaces/response.interface";
 export class PhotoService {
 	constructor(private http: HttpClient) {}
 
-	public getPhotos(searchTerm: string): Observable<Array<Content>> {
+	public getSearchResults(searchTerm: string): Observable<Array<Content>> {
 		const fullPath: string =
 			"https://api.pixsell.hr/home/agencies?text=" + searchTerm;
 		return this.http
-			.get<Response>(fullPath)
+			.get<SearchResponse>(fullPath)
 			.pipe(map((response) => response.content));
 	}
 
-	public getPhotoDetails(id: string): Observable<Content> {
+	public getPhotoDetails(id: string): Observable<PhotoDetails> {
 		const fullPath: string =
 			"https://api.pixsell.hr/products/" + id + "?source=PIXSELL";
-		return this.http.get<Content>(fullPath);
+		return this.http.get<PhotoDetails>(fullPath);
 	}
 }

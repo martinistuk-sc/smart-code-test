@@ -1,5 +1,5 @@
 import { Content } from "./content.interface";
 
-export interface Response {
+export interface SearchResponse {
 	content: Content[];
 }
