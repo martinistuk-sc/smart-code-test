@@ -1,4 +1,4 @@
-<div class="container" *ngIf="photoDetails$ | async as details">
+<div class="container" *ngIf="details">
 	<div
 		class="photoPreview"
 		[style.backgroundImage]=" 'url(https://api.pixsell.hr' + details.preview.preview_url_large + ')' "
