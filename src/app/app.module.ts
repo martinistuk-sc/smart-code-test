@@ -7,7 +7,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AuthLayoutModule } from "./auth-layout/auth-layout.module";
 import { SearchboxModule } from "./main-layout/searchbox/searchbox.module";
 import { MainLayoutModule } from "./main-layout/main-layout.module";
-import { AuthService } from "./services/auth-service/auth.service";
+import { AuthService } from "./services/auth/auth.service";
 
 @NgModule({
 	declarations: [AppComponent],

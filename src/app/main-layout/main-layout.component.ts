@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { AuthService } from "../services/auth-service/auth.service";
+import { AuthService } from "../services/auth/auth.service";
 
 @Component({
 	selector: "app-main-layout",
@@ -11,7 +11,7 @@ import { AuthService } from "../services/auth-service/auth.service";
 export class MainLayoutComponent {
 	constructor(private authService: AuthService, private router: Router) {}
 
-	public logout(): void {
+	public onLogout(): void {
 		this.authService.logout().subscribe(
 			() => this.router.navigate(["auth", "login"])
 		);

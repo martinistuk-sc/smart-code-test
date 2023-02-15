@@ -1,0 +1,18 @@
+button {
+	height: 42px;
+	border-radius: 9999px;
+	outline: none;
+	border: none;
+	padding: 0 20px;
+	font-size: 16px;
+}
+button {
+	background: hsl(220, 100%, 40%);
+	color: white;
+	&:hover {
+		background: hsl(220, 100%, 60%);
+	}
+	&:active {
+		background: hsl(220, 100%, 20%);
+	}
+}

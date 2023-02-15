@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 import { AuthLayoutComponent } from "./auth-layout/auth-layout.component";
-import { AuthGuard } from "./auth-layout/guards/auth-guard/auth.guard";
+import { AuthGuard } from "./guards/auth-guard/auth.guard";
 import { LoginComponent } from "./auth-layout/login/login.component";
 import { MainLayoutComponent } from "./main-layout/main-layout.component";
 import { SearchboxComponent } from "./main-layout/searchbox/searchbox.component";

@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 
 import { Subscription } from "rxjs";
 
-import { AuthService } from "src/app/services/auth-service/auth.service";
+import { AuthService } from "src/app/services/auth/auth.service";
 import { LoginData } from "src/app/interfaces/login-data.interface";
 
 @Component({
