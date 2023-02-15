@@ -13,11 +13,11 @@ import { PhotoService } from "../../services/photo/photo.service";
 })
 export class SearchboxComponent implements OnDestroy {
 	constructor(
-		private fb: FormBuilder,
+		private formBuilder: FormBuilder,
 		private photoService: PhotoService
 	) {}
 
-	public searchForm = this.fb.group(
+	public searchForm = this.formBuilder.group(
 		{ name: ["Modrić", [Validators.required]] },
 		{ updateOn: "change" }
 	);

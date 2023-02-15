@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm">
+	<input
+		type="text"
+		formControlName="username"
+		(keydown.enter)="onLogin()"
+		placeholder="username"
+	/>
+	<input
+		type="password"
+		formControlName="password"
+		(keydown.enter)="onLogin()"
+		placeholder="password"
+	/>
+	<button type="button" (click)="onLogin()">Login</button>
+</form>
