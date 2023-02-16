@@ -13,7 +13,7 @@ export class AuthService {
 	constructor(private http: HttpClient, private router: Router) {}
 
 	public isAuthenticated: boolean = false;
-	private token: string | null = null;
+	public token: string | null = null;
 
 	public init(): void {
 		const check = localStorage.getItem("userToken");

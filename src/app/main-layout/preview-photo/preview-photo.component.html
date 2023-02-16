@@ -1,2 +1,4 @@
-<app-photo-details [details]="photoDetails$ | async"></app-photo-details>
-<app-basket></app-basket>
+<div *ngIf="photoDetails$ | async as photoDetails">
+	<app-photo-details [details]="photoDetails"></app-photo-details>
+	<app-basket [photoId]="photoDetails.id"></app-basket>
+</div>

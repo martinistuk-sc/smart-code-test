@@ -15,7 +15,7 @@ export class PhotoService {
 
 	public getSearchResults(searchTerm: string): Observable<Array<Content>> {
 		const fullPath: string =
-			"https://api.pixsell.hr/home/agencies?text=" + searchTerm;
+			"https://staging-221103.api.piwe.smartcode.eu/home/agencies?text=" + searchTerm;
 		return this.http
 			.get<SearchResponse>(fullPath)
 			.pipe(map((response) => response.content));
@@ -23,7 +23,7 @@ export class PhotoService {
 
 	public getPhotoDetails(id: string): Observable<PhotoDetails> {
 		const fullPath: string =
-			"https://api.pixsell.hr/products/" + id + "?source=PIXSELL";
+			"https://staging-221103.api.piwe.smartcode.eu/products/" + id + "?source=PIXSELL";
 		return this.http.get<PhotoDetails>(fullPath);
 	}
 }
