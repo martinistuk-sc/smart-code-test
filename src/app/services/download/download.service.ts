@@ -18,11 +18,11 @@ export class DownloadService {
 			"/download/full/link?kind=PRINT&has_author_signature=false&source=PIXSELL";
 
 		const headers = {
-			"Authorization": "Bearer " + this.authService.token
+			Authorization: "Bearer " + this.authService.token,
 		};
 
 		return this.http
-			.post<{ link: string }>(fullPath, null, {headers})
+			.post<{ link: string }>(fullPath, null, { headers })
 			.pipe(map((data) => data.link));
 	}
 }

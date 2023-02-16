@@ -1,4 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnDestroy } from "@angular/core";
+
+import { Subscription } from "rxjs";
 
 import { DownloadService } from "src/app/services/download/download.service";
 
@@ -7,15 +9,27 @@ import { DownloadService } from "src/app/services/download/download.service";
 	templateUrl: "./basket.component.html",
 	styleUrls: ["./basket.component.scss"],
 })
-export class BasketComponent {
+export class BasketComponent implements OnDestroy {
 	constructor(private downloadService: DownloadService) {}
 
 	@Input() photoId?: string;
 
+	private subscription?: Subscription;
+
 	public onDownload() {
-		this.downloadService.download(this.photoId as string).subscribe({
-			next: (dlLink) => {console.log(dlLink)},
+		this.subscription = this.downloadService.download(this.photoId as string).subscribe({
+			next: (link: string) => {
+				var a = document.createElement("a");
+				a.href = link;
+				a.target = "_blank";
+				a.download = this.photoId as string;
+				a.click();
+			},
 			error: () => window.alert("Error downloading file")
 		});
+	}
+
+	ngOnDestroy(): void {
+		this.subscription?.unsubscribe();
 	}
 }
