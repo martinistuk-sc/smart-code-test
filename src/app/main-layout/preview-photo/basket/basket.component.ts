@@ -20,9 +20,8 @@ export class BasketComponent implements OnDestroy {
 		this.subscription = this.downloadService.download(this.photoId as string).subscribe({
 			next: (link: string) => {
 				var a = document.createElement("a");
-				a.href = link;
-				a.target = "_blank";
-				a.download = this.photoId as string;
+				a.href = link;  // url
+				a.target = "_blank";  // new tab
 				a.click();
 			},
 			error: () => window.alert("Error downloading file")
